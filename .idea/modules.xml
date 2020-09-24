@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Android.iml" filepath="$PROJECT_DIR$/.idea/modules/Android.iml" group="Android" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Android-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Android-app.iml" group="Android/app" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="Android/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library_retrofit/library_retrofit.iml" filepath="$PROJECT_DIR$/.idea/modules/library_retrofit/library_retrofit.iml" group="Android/library_retrofit" />
     </modules>
   </component>
 </project>

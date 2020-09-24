@@ -12,6 +12,11 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -20,12 +25,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation project(path: ':library_retrofit')
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
@@ -50,5 +60,13 @@ dependencies {
     implementation dep.retrofit2
     implementation dep.converterGson
     implementation dep.adapterRxjava2
+
+    implementation dep.rxlifecycle
+    implementation dep.rxlifecycleAndroid
+    implementation dep.rxlifecycleComponents
+
+    implementation dep.utilcode
+    implementation dep.roomRuntime
+    annotationProcessor apt.roomCompiler
 
 }

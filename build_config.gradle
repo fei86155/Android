@@ -26,6 +26,11 @@ dep.zxing = 'com.google.zxing:core:3.3.3'
 dep.retrofit2 = "com.squareup.retrofit2:retrofit:2.6.2"
 dep.converterGson ="com.squareup.retrofit2:converter-gson:2.6.2"
 dep.adapterRxjava2 = "com.squareup.retrofit2:adapter-rxjava2:2.6.2"
+dep.rxlifecycle = 'com.trello.rxlifecycle2:rxlifecycle:2.2.2'
+dep.rxlifecycleAndroid = 'com.trello.rxlifecycle2:rxlifecycle-android:2.2.2'
+dep.rxlifecycleComponents = 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2'
+dep.utilcode = 'com.blankj:utilcode:1.13.5'
+dep.roomRuntime = "androidx.room:room-runtime:2.2.5"
 
 ext.dep = dep
 
@@ -35,5 +40,6 @@ ext.dep = dep
 def apt = [:]
 apt.butterknife = 'com.jakewharton:butterknife-compiler:10.2.3'
 apt.arouter = 'com.alibaba:arouter-compiler:1.2.2'
+apt.roomCompiler = "androidx.room:room-compiler:2.2.5"
 
 ext.apt = apt
