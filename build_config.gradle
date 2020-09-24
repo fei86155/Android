@@ -1,0 +1,39 @@
+/**
+ * 项目版本
+ */
+def root = [:]
+root.compileSdkVersion = 30
+root.buildToolsVersion = "30.0.2"
+root.minSdkVersion = 16
+root.targetSdkVersion = 30
+
+ext.root = root
+
+/**
+ * 三方依赖库
+ */
+def dep = [:]
+dep.BaseRecyclerViewAdapterHelper = "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40"
+dep.butterknife = 'com.jakewharton:butterknife:10.2.3'
+dep.material = 'com.google.android.material:material:1.2.1'
+dep.arouter = 'com.alibaba:arouter-api:1.5.0'
+dep.gson = "com.google.code.gson:gson:2.8.6"
+dep.smartrefresh = "com.scwang.smartrefresh:SmartRefreshLayout:1.1.2"
+dep.eventbus = "org.greenrobot:eventbus:3.1.1"
+dep.flexbox = "com.google.android:flexbox:0.3.2"
+dep.DSBridge = 'com.github.wendux:DSBridge-Android:3.0-SNAPSHOT'
+dep.zxing = 'com.google.zxing:core:3.3.3'
+dep.retrofit2 = "com.squareup.retrofit2:retrofit:2.6.2"
+dep.converterGson ="com.squareup.retrofit2:converter-gson:2.6.2"
+dep.adapterRxjava2 = "com.squareup.retrofit2:adapter-rxjava2:2.6.2"
+
+ext.dep = dep
+
+/**
+ * annotation processor tool
+ */
+def apt = [:]
+apt.butterknife = 'com.jakewharton:butterknife-compiler:10.2.3'
+apt.arouter = 'com.alibaba:arouter-compiler:1.2.2'
+
+ext.apt = apt

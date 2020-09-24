@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    compileSdkVersion root.compileSdkVersion
+    buildToolsVersion root.buildToolsVersion
 
     defaultConfig {
         applicationId "com.example.android"
-        minSdkVersion 16
-        targetSdkVersion 30
+        minSdkVersion root.minSdkVersion
+        targetSdkVersion root.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -29,5 +29,26 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation dep.BaseRecyclerViewAdapterHelper
+    implementation dep.butterknife
+    implementation dep.material
+    annotationProcessor apt.butterknife
+
+    implementation dep.arouter
+    annotationProcessor apt.arouter
+
+    implementation dep.gson
+    implementation  dep.smartrefresh
+    implementation dep.eventbus
+
+    implementation dep.flexbox
+
+    implementation dep.DSBridge
+
+    implementation dep.zxing
+    implementation dep.retrofit2
+    implementation dep.converterGson
+    implementation dep.adapterRxjava2
 
 }
