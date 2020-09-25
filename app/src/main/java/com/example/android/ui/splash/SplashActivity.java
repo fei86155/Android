@@ -13,6 +13,7 @@ import com.example.android.arouter.BridgeConstants;
 import com.example.android.base.BaseMvpActivity;
 import com.example.android.db.AppDatabase;
 import com.example.android.db.entity.User;
+import com.example.android.utils.AnimUtil;
 
 /**
  * Author:      xxbi
@@ -60,7 +61,7 @@ public class SplashActivity extends BaseMvpActivity<SplashPresenter> implements 
     }
 
     private void doJump() {
-        ARouter.getInstance().build(BridgeConstants.MAIN).navigation();
+        ARouter.getInstance().build(BridgeConstants.MAIN).withOptionsCompat(AnimUtil.initArouterAnim()).navigation();
         finish();
     }
 

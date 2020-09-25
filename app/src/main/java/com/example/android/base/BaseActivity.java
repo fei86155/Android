@@ -9,7 +9,6 @@ import android.view.WindowManager;
 
 import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
@@ -29,7 +28,6 @@ public abstract class BaseActivity extends RxAppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(getLayoutView());
         unbinder = ButterKnife.bind(this);

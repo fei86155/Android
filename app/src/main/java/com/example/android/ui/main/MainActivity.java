@@ -36,8 +36,6 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> {
 
     @Override
     protected void initView() {
-
-
         initTabView();
     }
 
