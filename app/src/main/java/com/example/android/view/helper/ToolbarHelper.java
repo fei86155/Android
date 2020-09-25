@@ -10,6 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 
 import com.example.android.R;
+import com.example.android.view.StatusbarUtil;
 
 import org.w3c.dom.Text;
 
@@ -45,20 +46,15 @@ public class ToolbarHelper {
         if (isImmersive) {
 
         } else {
-            int statusbarHeightRes = getToolbar().getResources().getIdentifier("status_bar_height", "dimen", "android");
-            if (statusbarHeightRes > 0) {
-                int statusBarHeight = getToolbar().getResources().getDimensionPixelSize(statusbarHeightRes);
-                ConstraintLayout.LayoutParams layoutParams = new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                layoutParams.height = statusBarHeight;
-                viewStatusBar.setLayoutParams(layoutParams);
+            ConstraintLayout.LayoutParams layoutParams = new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            layoutParams.height = StatusbarUtil.getStatusbarHeight();
+            viewStatusBar.setLayoutParams(layoutParams);
 
+            /*ConstraintSet set = new ConstraintSet();
+            set.clone(mBaseContainer);
+            set.constrainHeight(R.id.view_statusbar_margin, statusBarHeight);
+            set.applyTo(mBaseContainer);*/
 
-                /*ConstraintSet set = new ConstraintSet();
-                set.clone(mBaseContainer);
-                set.constrainHeight(R.id.view_statusbar_margin, statusBarHeight);
-                set.applyTo(mBaseContainer);*/
-
-            }
         }
     }
 

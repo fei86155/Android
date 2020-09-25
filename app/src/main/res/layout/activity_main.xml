@@ -29,7 +29,7 @@
         app:tabGravity="fill"
         app:tabRippleColor="@android:color/transparent"
         app:tabIndicatorHeight="0dp"
-        app:tabSelectedTextColor="#0000ff"
+        app:tabSelectedTextColor="#1878EB"
         app:tabIndicatorFullWidth="false"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintTop_toBottomOf="@id/vp_container"

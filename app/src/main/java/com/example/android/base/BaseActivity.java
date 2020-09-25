@@ -9,7 +9,10 @@ import android.view.WindowManager;
 
 import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 
+import com.example.android.R;
+import com.example.android.view.helper.ToolbarHelper;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
 import butterknife.ButterKnife;
@@ -24,6 +27,7 @@ import butterknife.Unbinder;
  */
 public abstract class BaseActivity extends RxAppCompatActivity {
     private Unbinder unbinder;
+    private ToolbarHelper mToolbarHelper;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,6 +41,22 @@ public abstract class BaseActivity extends RxAppCompatActivity {
         initView();
         initListener();
         initData();
+    }
+
+    protected ToolbarHelper provideToolbarHelper() {
+        provideToolbar();
+        return mToolbarHelper;
+    }
+
+    private void provideToolbar() {
+        if (mToolbarHelper == null) {
+            Toolbar toolbar = findViewById(R.id.toolbar);
+            if (toolbar == null) {
+                throw new IllegalArgumentException("Toolbar must be defined in layout");
+            }
+            mToolbarHelper = new ToolbarHelper(toolbar);
+            mToolbarHelper.setImmersive(false);
+        }
     }
 
     /**

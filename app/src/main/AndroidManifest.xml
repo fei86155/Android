@@ -19,6 +19,7 @@
         </activity>
         <activity android:name=".ui.main.MainActivity" />
         <activity android:name=".ui.guide.GuideActivity" />
+        <activity android:name=".ui.main.home.more.HomeMoreActivity" />
     </application>
 
 </manifest>

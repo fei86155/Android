@@ -10,6 +10,7 @@ import com.blankj.utilcode.util.LogUtils;
 import com.example.android.R;
 import com.example.android.app.BaseApplication;
 import com.example.android.arouter.BridgeConstants;
+import com.example.android.arouter.BridgeUtil;
 import com.example.android.base.BaseMvpActivity;
 import com.example.android.db.AppDatabase;
 import com.example.android.db.entity.User;
@@ -61,7 +62,8 @@ public class SplashActivity extends BaseMvpActivity<SplashPresenter> implements 
     }
 
     private void doJump() {
-        ARouter.getInstance().build(BridgeConstants.MAIN).withOptionsCompat(AnimUtil.initArouterAnim()).navigation();
+        BridgeUtil.bridgeWithAnim(BridgeConstants.MAIN);
+
         finish();
     }
 

@@ -13,7 +13,7 @@ import com.example.android.db.entity.User;
  * Modified By:
  * Description:
  */
-@Database(entities = {User.class}, version = 1)
+@Database(entities = {User.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract UserDao userDao();
 }
