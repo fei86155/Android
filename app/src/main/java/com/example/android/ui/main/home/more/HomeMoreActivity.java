@@ -50,14 +50,13 @@ public class HomeMoreActivity extends BaseMvpActivity<HomeMorePresenter> impleme
         mAdapter = new HomeMoreAdapter(null);
         mAdapter.bindToRecyclerView(rvContainer);
         rvContainer.setAdapter(mAdapter);
-        /*rvContainer.setLayoutManager(new FlexboxLayoutManager(this, FlexDirection.ROW, FlexWrap.WRAP){
+        rvContainer.setLayoutManager(new FlexboxLayoutManager(this, FlexDirection.ROW, FlexWrap.WRAP){
             @Override
             public boolean canScrollVertically() {
                 return false;
             }
         });
-        */
-        rvContainer.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
+//        rvContainer.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
         ItemDragAndSwipeCallback callback = new ItemDragAndSwipeCallback(mAdapter);
         ItemTouchHelper helper = new ItemTouchHelper(callback);
         helper.attachToRecyclerView(rvContainer);
@@ -78,6 +77,7 @@ public class HomeMoreActivity extends BaseMvpActivity<HomeMorePresenter> impleme
 
             }
         });
+        mAdapter.enableDragItem(helper);
 
 
 
