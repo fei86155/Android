@@ -28,10 +28,11 @@ public abstract class BaseActivity extends RxAppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+        initState();
         setContentView(getLayoutView());
         unbinder = ButterKnife.bind(this);
-        initState();
 
         initView();
         initListener();
@@ -43,7 +44,7 @@ public abstract class BaseActivity extends RxAppCompatActivity {
      * 当虚拟按键不存在，布局沉浸全屏幕
      * 适配到android 4.4
      */
-    private void initState() {
+    protected void initState() {
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
             getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR); //全屏显示

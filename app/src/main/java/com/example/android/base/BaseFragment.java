@@ -7,8 +7,9 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
+import androidx.appcompat.widget.Toolbar;
+import com.example.android.view.helper.ToolbarHelper;
+import com.example.android.R;
 import com.trello.rxlifecycle2.components.support.RxFragment;
 
 import butterknife.ButterKnife;
@@ -24,6 +25,7 @@ import butterknife.Unbinder;
 public abstract class BaseFragment<T extends BasePresenter> extends RxFragment implements IView {
     private T mPresenter;
     private Unbinder unbinder;
+    private ToolbarHelper toolbarHelper;
 
     @Nullable
     @Override
@@ -32,7 +34,6 @@ public abstract class BaseFragment<T extends BasePresenter> extends RxFragment i
         unbinder = ButterKnife.bind(this, view);
         return view;
     }
-
 
 
     @Override
@@ -47,6 +48,23 @@ public abstract class BaseFragment<T extends BasePresenter> extends RxFragment i
         initListener();
         initData();
 
+    }
+
+    protected ToolbarHelper provideToolbarHelper() {
+        provideToolbar();
+        return toolbarHelper;
+    }
+
+    private void provideToolbar() {
+        if (toolbarHelper == null && getView() != null) {
+            Toolbar toolbar = getView().findViewById(R.id.toolbar);
+            if (toolbar == null) {
+                throw new IllegalArgumentException("toolbar must included in layout file");
+            } else {
+                toolbarHelper = new ToolbarHelper(toolbar);
+                toolbarHelper.setImmersive(false);
+            }
+        }
     }
 
     @Override

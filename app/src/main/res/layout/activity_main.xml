@@ -14,12 +14,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/tl_navigation"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#55AAAAAA"
+        app:layout_constraintTop_toBottomOf="@id/vp_container"
+        app:layout_constraintBottom_toTopOf="@id/tl_navigation"/>
+
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tl_navigation"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:tabMode="scrollable"
-        app:tabGravity="center"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:tabRippleColor="@android:color/transparent"
+        app:tabIndicatorHeight="0dp"
         app:tabSelectedTextColor="#0000ff"
         app:tabIndicatorFullWidth="false"
         app:layout_constraintVertical_weight="1"

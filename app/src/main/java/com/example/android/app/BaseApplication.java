@@ -58,4 +58,6 @@ public class BaseApplication extends Application implements Thread.UncaughtExcep
     public void uncaughtException(@NonNull Thread thread, @NonNull Throwable throwable) {
         LogUtils.e("uncaught exception:" + throwable.toString());
     }
+
+
 }

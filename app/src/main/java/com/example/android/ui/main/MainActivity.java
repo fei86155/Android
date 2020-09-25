@@ -11,6 +11,7 @@ import com.example.android.R;
 import com.example.android.arouter.BridgeConstants;
 import com.example.android.base.BaseMvpActivity;
 import com.example.android.ui.main.home.HomeFragment;
+import com.example.android.ui.main.service.ServiceFragment;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -40,14 +41,18 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> {
     }
 
     private void initTabView() {
-        String[] titles = new String[]{"首页", "次页"};
+        String[] titles = new String[]{"首页", "次页", "首页", "次页"};
         List<Fragment> fragmentList = new ArrayList<>();
         fragmentList.add(new HomeFragment());
+        fragmentList.add(new ServiceFragment());
+
+
 
 
         mAdapter = new MainAdapter(getSupportFragmentManager(), BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, fragmentList, titles);
         vpContainer.setAdapter(mAdapter);
         tlNavigation.setupWithViewPager(vpContainer);
+
     }
 
     @Override
