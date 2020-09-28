@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: "com.tencent.android.tpns"
+
 
 android {
     compileSdkVersion root.compileSdkVersion
@@ -68,5 +70,8 @@ dependencies {
     implementation dep.utilcode
     implementation dep.roomRuntime
     annotationProcessor apt.roomCompiler
+
+    implementation dep.glide
+    annotationProcessor apt.glide
 
 }

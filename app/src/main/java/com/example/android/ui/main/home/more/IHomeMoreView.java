@@ -10,4 +10,5 @@ import com.example.android.base.IView;
  * Description:
  */
 public interface IHomeMoreView extends IView {
+    void requestDataSuccess();
 }

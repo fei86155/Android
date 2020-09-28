@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.wendux:DSBridge-Android:3.0-SNAPSHOT@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9214fa932cc6bd64c38f0ce06102c9fc/jetified-DSBridge-Android-3.0-SNAPSHOT/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cba054fb4a4bc6c45c5469d1cda1bf97/jetified-DSBridge-Android-3.0-SNAPSHOT/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9214fa932cc6bd64c38f0ce06102c9fc/jetified-DSBridge-Android-3.0-SNAPSHOT/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9214fa932cc6bd64c38f0ce06102c9fc/jetified-DSBridge-Android-3.0-SNAPSHOT/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9214fa932cc6bd64c38f0ce06102c9fc/jetified-DSBridge-Android-3.0-SNAPSHOT/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cba054fb4a4bc6c45c5469d1cda1bf97/jetified-DSBridge-Android-3.0-SNAPSHOT/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cba054fb4a4bc6c45c5469d1cda1bf97/jetified-DSBridge-Android-3.0-SNAPSHOT/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cba054fb4a4bc6c45c5469d1cda1bf97/jetified-DSBridge-Android-3.0-SNAPSHOT/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

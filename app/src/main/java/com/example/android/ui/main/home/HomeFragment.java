@@ -5,20 +5,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.android.R;
 import com.example.android.base.BaseFragment;
 import com.example.android.view.StatusbarUtil;
+import com.example.android.view.layout.MultiStatusLayout;
 import com.google.android.material.tabs.TabLayout;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import butterknife.BindView;
-
-import static androidx.fragment.app.FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT;
 
 /**
  * Author: xxbi
@@ -27,13 +22,15 @@ import static androidx.fragment.app.FragmentStatePagerAdapter.BEHAVIOR_RESUME_ON
  * Modified By:
  * Description:
  */
-public class HomeFragment extends BaseFragment<HomePresenter> implements IHomeView{
+public class HomeFragment extends BaseFragment<HomePresenter> implements IHomeView {
     @BindView(R.id.view_status_bar)
     View viewStatusbar;
     @BindView(R.id.tl_navigation)
     TabLayout tlNavigation;
     @BindView(R.id.vp_container)
     ViewPager vpContainer;
+    @BindView(R.id.msl_container)
+    MultiStatusLayout mslContainer;
 
     @Override
     protected int getLayoutView() {
@@ -51,11 +48,13 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements IHomeVi
         layoutParams.height = StatusbarUtil.getStatusbarHeight();
         viewStatusbar.setLayoutParams(layoutParams);
 
-
         vpContainer.setAdapter(new HomeAdapter(getContext()));
         tlNavigation.setupWithViewPager(vpContainer);
 
+//        mslContainer.addViewByState(MultiStatusLayout.ViewState.STATE_LOADING_VALUE, R.drawable.icon_homepage_mian, "Loading......", "", null);
+        mslContainer.setCurrentViewState(MultiStatusLayout.ViewState.STATE_CONTENT_VALUE);
     }
+
 
     @Override
     protected void initListener() {
@@ -66,4 +65,5 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements IHomeVi
     protected void initData() {
 
     }
+
 }

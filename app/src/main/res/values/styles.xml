@@ -12,4 +12,18 @@
         <item name="android:layout_height">0.5dp</item>
     </style>
 
+
+
+    <declare-styleable name="MultiStatusLayout">
+        <attr name="loading_view" format="reference"/>
+        <attr name="no_data_view" format="reference"/>
+        <attr name="net_error_view" format="reference"/>
+        <attr name="unknown_view" format="reference"/>
+
+        <attr name="init_view" format="enum">
+            <enum name="content" value="1"/>
+            <enum name="loading" value="2"/>
+        </attr>
+    </declare-styleable>
+
 </resources>
