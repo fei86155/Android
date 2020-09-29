@@ -42,7 +42,7 @@ public class GuideActivity extends BaseMvpActivity<GuidePresenter> implements IG
         View view1 = LayoutInflater.from(this).inflate(R.layout.item_guide, null, false);
         View view2 = LayoutInflater.from(this).inflate(R.layout.item_guide, null, false);
         ImageView imageView = view1.findViewById(R.id.iv_content);
-        imageView.setImageResource(R.drawable.bg_room);
+//        imageView.setImageResource(R.drawable.bg_room);
         View view3 = LayoutInflater.from(this).inflate(R.layout.item_guide, null, false);
         vfContainer.addView(view1, 0);
         vfContainer.addView(view2, 1);

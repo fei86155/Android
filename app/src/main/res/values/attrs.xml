@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CommonItemView">
+        <attr name="image_left" format="reference"/>
+        <attr name="text_center" format="string"/>
+        <attr name="image_right" format="reference"/>
+    </declare-styleable>
+</resources>

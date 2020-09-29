@@ -20,7 +20,7 @@ import io.reactivex.schedulers.Schedulers;
  */
 public class HomeMorePresenter extends BasePresenter<IHomeMoreView, IModel> {
     public void getData() {
-        Disposable disposable = Observable.interval(2, TimeUnit.SECONDS)
+        Disposable disposable = Observable.interval(1, TimeUnit.SECONDS)
                 .take(1)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

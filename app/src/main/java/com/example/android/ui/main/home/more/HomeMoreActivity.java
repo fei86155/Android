@@ -4,6 +4,7 @@ import android.graphics.Canvas;
 import android.util.Log;
 import android.view.View;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,11 +18,16 @@ import com.chad.library.adapter.base.loadmore.LoadMoreView;
 import com.example.android.R;
 import com.example.android.arouter.BridgeConstants;
 import com.example.android.base.BaseMvpActivity;
+import com.google.android.flexbox.FlexDirection;
+import com.google.android.flexbox.FlexWrap;
+import com.google.android.flexbox.FlexboxLayoutManager;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * Author:      xxbi
@@ -34,6 +40,10 @@ import butterknife.BindView;
 public class HomeMoreActivity extends BaseMvpActivity<HomeMorePresenter> implements IHomeMoreView {
     @BindView(R.id.rv_container)
     RecyclerView rvContainer;
+    @BindView(R.id.fab_top)
+    FloatingActionButton fabTop;
+    @BindView(R.id.cl_root_more)
+    ConstraintLayout clRootMore;
 
     private HomeMoreAdapter mAdapter;
 
@@ -54,7 +64,7 @@ public class HomeMoreActivity extends BaseMvpActivity<HomeMorePresenter> impleme
                 .addRightButtonListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        mPresenter.getData();
 
                     }
                 })
@@ -71,11 +81,11 @@ public class HomeMoreActivity extends BaseMvpActivity<HomeMorePresenter> impleme
         });*/
         rvContainer.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
 
-        ItemDragAndSwipeCallback callback = new ItemDragAndSwipeCallback(mAdapter);
-        ItemTouchHelper helper = new ItemTouchHelper(callback);
+        ItemTouchHelper helper = new ItemTouchHelper(new ItemDragAndSwipeCallback(mAdapter));
         helper.attachToRecyclerView(rvContainer);
 
         mAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
+        mAdapter.enableDragItem(helper);
         mAdapter.setOnItemDragListener(new OnItemDragListener() {
             @Override
             public void onItemDragStart(RecyclerView.ViewHolder viewHolder, int i) {
@@ -89,10 +99,8 @@ public class HomeMoreActivity extends BaseMvpActivity<HomeMorePresenter> impleme
 
             @Override
             public void onItemDragEnd(RecyclerView.ViewHolder viewHolder, int i) {
-
             }
         });
-        mAdapter.enableDragItem(helper);
 
         mAdapter.setOnItemSwipeListener(new OnItemSwipeListener() {
             @Override
@@ -117,7 +125,6 @@ public class HomeMoreActivity extends BaseMvpActivity<HomeMorePresenter> impleme
         });
         mAdapter.enableSwipeItem();
 
-//        mAdapter.setEnableLoadMore(true);
         mAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
             @Override
             public void onLoadMoreRequested() {
@@ -172,14 +179,26 @@ public class HomeMoreActivity extends BaseMvpActivity<HomeMorePresenter> impleme
     @Override
     public void requestDataSuccess() {
         List<HomeMoreEntity> entityList = new ArrayList<>();
-        entityList.add(new HomeMoreEntity("A"));
-        entityList.add(new HomeMoreEntity("BB"));
-        entityList.add(new HomeMoreEntity("CCC"));
-        entityList.add(new HomeMoreEntity("DDDD"));
-        entityList.add(new HomeMoreEntity("EEEEE"));
+        entityList.add(new HomeMoreEntity("Start"));
+        for (int i = 0; i < 10; i++) {
+            entityList.add(new HomeMoreEntity("A"));
+            entityList.add(new HomeMoreEntity("BB"));
+            entityList.add(new HomeMoreEntity("CCC"));
+            entityList.add(new HomeMoreEntity("DDDD"));
+            entityList.add(new HomeMoreEntity("EEEEE"));
+        }
+        entityList.add(new HomeMoreEntity("End"));
 
         mAdapter.setNewData(entityList);
-        mAdapter.loadMoreEnd();
+    }
+
+    @OnClick(R.id.fab_top)
+    public void onVIewClicked(View v) {
+        switch (v.getId()) {
+            case R.id.fab_top:
+                rvContainer.smoothScrollToPosition(0);
+                break;
+        }
     }
 
 

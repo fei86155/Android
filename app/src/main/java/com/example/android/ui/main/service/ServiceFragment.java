@@ -1,11 +1,15 @@
 package com.example.android.ui.main.service;
 
+import android.view.View;
+import android.widget.Button;
+import android.widget.Scroller;
 import android.widget.Toolbar;
 
 import com.example.android.R;
 import com.example.android.base.BaseFragment;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * Author:      xxbi
@@ -40,4 +44,5 @@ public class ServiceFragment extends BaseFragment<ServicePresenter> implements I
     protected void initData() {
 
     }
+
 }

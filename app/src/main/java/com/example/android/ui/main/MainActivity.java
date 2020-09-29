@@ -16,6 +16,7 @@ import com.example.android.R;
 import com.example.android.arouter.BridgeConstants;
 import com.example.android.base.BaseMvpActivity;
 import com.example.android.ui.main.home.HomeFragment;
+import com.example.android.ui.main.mine.MineFragment;
 import com.example.android.ui.main.service.ServiceFragment;
 import com.google.android.material.tabs.TabLayout;
 
@@ -52,7 +53,7 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> {
 
         List<Fragment> fragmentList = new ArrayList<>();
         fragmentList.add(new HomeFragment());
-        fragmentList.add(new ServiceFragment());
+        fragmentList.add(new MineFragment());
 
         mAdapter = new MainAdapter(getSupportFragmentManager(), BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, fragmentList, titles);
         vpContainer.setAdapter(mAdapter);
